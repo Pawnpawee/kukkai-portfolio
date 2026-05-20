@@ -65,7 +65,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10 h-screen justify-center"
+      className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10 h-fit justify-center"
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import CTAArrowButton from "./CTAArrowButton";
+import { commonUI } from "@/data/constants";
 
 interface ProjectCardProps {
   title: string;
@@ -30,9 +31,19 @@ export default function ProjectCard({
     setIsPreviewing(false);
   };
 
+  // Helper to determine if the URL is for YouTube
+  const isYouTubeUrl = (url: string) => {
+    return url.includes("youtube.com") || url.includes("youtu.be");
+  };
+
+  // Helper to normalize image paths
+  const normalizeImagePath = (path: string) => {
+    return path.replace(/\\/g, "/").replace(/^public\//, "/").replace(/^\/?assets\//, "/assets/");
+  };
+
   // Construct the video URL with autoplay and mute if previewing or focused
   const getEmbedUrl = () => {
-    if (!videoEmbedUrl) return "";
+    if (!videoEmbedUrl || !isYouTubeUrl(videoEmbedUrl)) return "";
     
     // Play if hovered OR if it's the focused card
     const shouldPlay = isPreviewing || isFocused;
@@ -55,16 +66,24 @@ export default function ProjectCard({
       {/* Video Preview Frame */}
       <div className="relative w-full flex-1 overflow-hidden rounded-[20px] bg-[#d9d9d9]">
         {videoEmbedUrl ? (
-          <iframe
-            src={getEmbedUrl()}
-            title={title}
-            className="absolute inset-0 size-full border-none"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          isYouTubeUrl(videoEmbedUrl) ? (
+            <iframe
+              src={getEmbedUrl()}
+              title={title}
+              className="absolute inset-0 size-full border-none"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <img
+              src={normalizeImagePath(videoEmbedUrl)}
+              alt={title}
+              className="absolute inset-0 size-full object-cover"
+            />
+          )
         ) : (
           <div className="flex h-full w-full items-center justify-center text-gray-500 font-manjari">
-            Preview Video (3s)
+            {commonUI.previewVideoPlaceholder}
           </div>
         )}
 
@@ -84,7 +103,7 @@ export default function ProjectCard({
         <div className="flex w-full justify-end mt-2">
           {/* Prevent clicks if not focused */}
           <div className={!isFocused ? "pointer-events-none" : ""}>
-            <CTAArrowButton label="explore" href={exploreHref} />
+            <CTAArrowButton label={commonUI.exploreButtonLabel} href={exploreHref} />
           </div>
         </div>
       </div>

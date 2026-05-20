@@ -158,7 +158,8 @@ export default function WorkExperienceSection() {
       <div className="flex flex-col gap-14 items-center justify-center w-full max-w-7xl mx-auto relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="font-manjari text-4xl md:text-5xl lg:text-6xl text-center"
         >

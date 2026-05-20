@@ -158,7 +158,7 @@ Every page section **must** use this exact wrapper pattern:
 ```tsx
 <section
   id="[section-id]"
-  className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10 h-screen"
+  className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10 h-fit"
 >
 ```
 

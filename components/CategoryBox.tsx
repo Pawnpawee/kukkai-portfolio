@@ -26,14 +26,14 @@ export default function CategoryBox({ category }: { category: CategoryData }) {
             <Icon className="w-10 h-10 text-[#AEDEFC]" />
           </div>
           <div className="bg-[#AEDEFC]/50 px-6 py-4 rounded-[50px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] shrink-0">
-            <span className="font-manjari font-bold text-xl lg:text-2xl text-black whitespace-nowrap">
+            <span className="font-manjari font-bold text-lg lg:text-xl text-black whitespace-nowrap">
               {category.count} Projects
             </span>
           </div>
         </div>
 
         <div className="w-full py-4">
-          <h3 className="font-manjari text-4xl lg:text-5xl text-black leading-tight whitespace-pre-line">
+          <h3 className="font-manjari text-3xl lg:text-4xl text-black leading-tight whitespace-pre-line">
             {category.title}
           </h3>
         </div>

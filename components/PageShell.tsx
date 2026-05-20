@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import Navbar from "./Navbar";
-import ScrollDownHint from "./ScrollDownHint";
 import { ReactLenis } from "lenis/react";
 
 interface PageShellProps {
@@ -14,7 +13,6 @@ interface PageShellProps {
 export default function PageShell({ children }: PageShellProps) {
   const pathname = usePathname();
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const isHome = pathname === "/";
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -23,8 +21,8 @@ export default function PageShell({ children }: PageShellProps) {
 
   return (
     <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true }}>
-      <div className="min-h-full bg-[url('/bg.png')] bg-cover bg-top bg-no-repeat bg-fixed text-black">
-        <div className="relative flex min-h-full flex-col px-4 md:px-8 lg:px-12">
+      <div className="min-h-screen bg-[url('/bg.png')] bg-cover bg-top bg-no-repeat bg-fixed text-black">
+        <div className="relative flex min-h-screen flex-col px-4 md:px-8 lg:px-12">
           <Header
             isNavOpen={isNavOpen}
             onToggleNav={() => setIsNavOpen((open) => !open)}

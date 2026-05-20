@@ -1,52 +1,67 @@
-import ProjectsSection from "@/sections/ProjectsSection";
+"use client";
+
+import Badge from "@/components/Badge";
 import DetailProjects from "@/components/DetailProjects";
+import { codingProjectsData } from "@/data/constants";
 import { motion } from "framer-motion";
 
-const PROJECTS_DATA = [
-  {
-    id: "ikigai",
-    title: "Ikigai: The Journey Of Life",
-    description:
-      "AI-driven interactive storytelling for personalized student career discovery",
-    skills: [
-      "Next.js",
-      "Typescript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "ASP.NET C#",
-      "n8n",
-      "AI",
-    ],
-    link: "https://example.com",
-    repository: "https://github.com/example/ikigai",
-    year: "2026",
-  },
-];
-
 export default function CodingProjectsPage() {
-  return (
-    <section className="flex flex-col items-center p-4 md:p-8 lg:p-[100px] w-full min-h-screen relative z-10 pt-[150px] lg:pt-[100px]">
-      <div className="flex flex-col items-center w-full max-w-7xl mx-auto gap-20">
-        <div className="flex flex-col w-full gap-20 mt-10">
-          <div className="flex flex-col gap-10">
-            {/* Year Label */}
-            <div className="bg-[#AEDEFC] border-2 border-white px-8 py-3 rounded-[50px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] self-start">
-              <h2 className="font-manjari font-bold text-3xl text-black">
-                2026
-              </h2>
-            </div>
+  // Group projects by year
+  const groupedProjects = codingProjectsData.reduce(
+    (acc, project) => {
+      const year = project.year || "Other";
+      if (!acc[year]) acc[year] = [];
+      acc[year].push(project);
+      return acc;
+    },
+    {} as Record<string, typeof codingProjectsData>,
+  );
 
-            {/* Projects List */}
-            <div className="flex flex-col w-full gap-10 pl-0 lg:pl-12">
-              {PROJECTS_DATA.map((project) => (
-                <div
-                  key={project.id}
-                  className="initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-50px' }} transition={{ duration: 0.5 }}"
-                >
-                  <DetailProjects project={project} />
+  // Sort years descending
+  const years = Object.keys(groupedProjects).sort((a, b) => b.localeCompare(a));
+
+  return (
+    <section className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10">
+      <div className="flex flex-col items-center w-full max-w-7xl mx-auto gap-20">
+        <div className="flex flex-col w-full gap-20">
+          <div className="flex flex-col gap-10 items-center">
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center font-manjari text-4xl font-bold text-black lg:text-5xl"
+            >
+              Coding & <br />
+              Programming
+            </motion.p>
+
+          </div>
+
+          <div className="flex flex-col w-full gap-20">
+            {years.map((year) => (
+              <div key={year} className="flex flex-col gap-10 items-center">
+                {/* Year Label */}
+                <div className="bg-[#AEDEFC] border-2 border-white px-8 py-3 rounded-[50px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] self-start w-full">
+                  <h2 className="font-manjari font-bold text-2xl text-black text-center">
+                    {year}
+                  </h2>
                 </div>
-              ))}
-            </div>
+
+                {/* Projects List */}
+                <div className="flex flex-col w-full gap-10 items-center">
+                  {groupedProjects[year].map((project) => (
+                    <div
+                      key={project.id}
+                      id={project.id}
+                      className="w-full flex justify-center scroll-mt-32"
+                    >
+                      <DetailProjects project={project} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

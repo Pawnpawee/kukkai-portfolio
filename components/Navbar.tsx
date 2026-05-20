@@ -11,117 +11,60 @@ import {
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/react/24/solid";
-
-const githubIcon = "/assets/Github.png";
+import { navbarData, githubIcon } from "@/data/constants";
 
 interface NavbarProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-interface NavItemBase {
-  label: string;
-  icon: React.ElementType | string;
-  iconClassName?: string;
-  labelClassName?: string;
-}
-
-interface InternalNavItem extends NavItemBase {
-  type: "internal";
-  href: string;
-}
-
-interface ExternalNavItem extends NavItemBase {
-  type: "external" | "mailto" | "anchor";
-  href: string;
-}
-
-type NavItem = InternalNavItem | ExternalNavItem;
-
-const primaryItems: NavItem[] = [
-  {
-    type: "internal",
-    href: "/projects",
-    label: "Projects",
-    icon: FolderIcon,
-    iconClassName: "h-[30px] w-[40px]",
-  },
-  {
-    type: "internal",
-    href: "/work-experience",
-    label: "Work\nExp.",
-    icon: BuildingOfficeIcon,
-    iconClassName: "h-[30px] w-[30px]",
-  },
-  {
-    type: "internal",
-    href: "/activities",
-    label: "Activities",
-    icon: UserGroupIcon,
-    iconClassName: "h-[25px] w-[26px]",
-  },
-  {
-    type: "internal",
-    href: "/skills",
-    label: "Skills",
-    icon: CodeBracketIcon,
-    iconClassName: "h-[25px] w-[25px]",
-  },
-];
-
-const secondaryItems: NavItem[] = [
-  {
-    type: "external",
-    href: "https://github.com/Pawnpawee",
-    label: "Github",
-    icon: githubIcon,
-    iconClassName: "h-[30px] w-[30px]",
-  },
-  {
-    type: "mailto",
-    href: "mailto:pornpawee214@gmail.com",
-    label: "Email",
-    icon: EnvelopeIcon,
-    iconClassName: "h-[25px] w-[33.333px]",
-  },
-  {
-    type: "anchor",
-    href: "/#contact",
-    label: "Contact",
-    icon: PhoneIcon,
-    iconClassName: "h-[25px] w-[25px]",
-  },
-];
+const iconMap: Record<string, React.ElementType | string> = {
+  folder: FolderIcon,
+  building: BuildingOfficeIcon,
+  users: UserGroupIcon,
+  "code-solid": CodeBracketIcon,
+  envelope: EnvelopeIcon,
+  phone: PhoneIcon,
+  github: githubIcon,
+};
 
 function NavItemLink({
   item,
   isActive,
   onClick,
 }: {
-  item: NavItem;
+  item: {
+    label: string;
+    href: string;
+    type: string;
+    iconType: string;
+    iconClassName?: string;
+  };
   isActive: boolean;
   onClick: () => void;
 }) {
   const commonClassName =
     "flex flex-col items-center justify-center gap-2 text-lg font-bold text-black hover:brightness-90 data-[active=true]:brightness-90";
 
-  const label = item.label.split("\n").map((line, index) => (
+  const label = item.label.split("\n").map((line: string, index: number) => (
     <span key={`${item.label}-${index}`} className="leading-none">
       {line}
     </span>
   ));
 
+  const Icon = iconMap[item.iconType] || FolderIcon;
+
   const content = (
     <>
       <div className={`relative ${item.iconClassName || "h-6.25 w-6.25"}`}>
-        {typeof item.icon === "string" ? (
+        {typeof Icon === "string" ? (
           <img
             alt=""
             className="absolute inset-0 h-full w-full"
-            src={item.icon}
+            src={Icon}
           />
         ) : (
-          <item.icon className="absolute inset-0 h-full w-full text-[#AEDEFC]" />
+          <Icon className="absolute inset-0 h-full w-full text-[#AEDEFC]" />
         )}
       </div>
       <span className="flex flex-col items-center text-center">{label}</span>
@@ -169,7 +112,7 @@ export default function Navbar({ isOpen, onClose }: NavbarProps) {
         className="hidden h-200.5 w-[116px] flex-col gap-7 fixed top-[120px] self-start z-40 lg:flex"
       >
         <div className="flex flex-col items-center gap-7 rounded-2xl bg-[rgba(255,255,255,0.7)] px-4 py-8">
-          {primaryItems.map((item) => (
+          {navbarData.primaryItems.map((item) => (
             <NavItemLink
               key={item.href}
               item={item}
@@ -179,7 +122,7 @@ export default function Navbar({ isOpen, onClose }: NavbarProps) {
           ))}
         </div>
         <div className="flex flex-col items-center gap-7 rounded-2xl bg-[rgba(255,255,255,0.7)] px-4 py-8">
-          {secondaryItems.map((item) => (
+          {navbarData.secondaryItems.map((item) => (
             <NavItemLink
               key={item.href}
               item={item}
@@ -211,7 +154,7 @@ export default function Navbar({ isOpen, onClose }: NavbarProps) {
             >
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col items-center gap-6 rounded-2xl bg-[rgba(255,255,255,0.7)] px-4 py-6">
-                  {primaryItems.map((item) => (
+                  {navbarData.primaryItems.map((item) => (
                     <NavItemLink
                       key={item.href}
                       item={item}
@@ -223,7 +166,7 @@ export default function Navbar({ isOpen, onClose }: NavbarProps) {
                   ))}
                 </div>
                 <div className="flex flex-col items-center gap-6 rounded-2xl bg-[rgba(255,255,255,0.7)] px-4 py-6">
-                  {secondaryItems.map((item) => (
+                  {navbarData.secondaryItems.map((item) => (
                     <NavItemLink
                       key={item.href}
                       item={item}

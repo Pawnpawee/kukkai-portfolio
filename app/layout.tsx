@@ -28,9 +28,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${teachers.variable} ${bitcount.variable} h-full antialiased`}
+      className={`${teachers.variable} ${bitcount.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="flex flex-col font-sans">
         <PageShell>{children}</PageShell>
       </body>
     </html>
