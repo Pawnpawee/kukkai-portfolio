@@ -8,9 +8,9 @@ import { workExperienceData } from "@/data/constants";
 interface Experience {
   year: string;
   title: string;
-  description: string;
+  description: string[] | string;
   skills: string[];
-  images: number[]; // Number of images to mock for the gallery
+  images: string[]; // Updated to match data/constants.ts
 }
 
 function TimelineItem({ item, index }: { item: Experience; index: number }) {
@@ -41,13 +41,33 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
 
       <div className="flex flex-col gap-4 w-full max-w-[450px] relative">
         {/* Card */}
-        <div className="bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-[20px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-full relative z-10">
+        <div className="bg-white/50 backdrop-blur-sm p-6 md:p-8 rounded-[20px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-full relative z-10 text-left">
           <h3 className="font-bitcount font-bold text-[#f875aa] text-2xl md:text-3xl mb-4">
             {item.title}
           </h3>
-          <p className="font-manjari text-lg text-black mb-6">
-            {item.description}
-          </p>
+
+          {/* Description as separate boxes */}
+          <div className="flex flex-col gap-3 mb-6">
+            {Array.isArray(item.description) ? (
+              item.description.map((desc, i) => (
+                <div
+                  key={i}
+                  className="flex gap-3 bg-white/40 p-3 rounded-lg border border-white shadow-sm"
+                >
+                  <span className="font-manjari text-[#f875aa] text-lg font-bold">
+                    •
+                  </span>
+                  <p className="font-manjari text-base md:text-lg text-black leading-relaxed">
+                    {desc}
+                  </p>
+                </div>
+              ))
+            ) : (
+              <p className="font-manjari text-lg text-black">
+                {item.description}
+              </p>
+            )}
+          </div>
 
           {/* Skills */}
           <div
@@ -113,9 +133,13 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
                   {item.images.map((img) => (
                     <div
                       key={img}
-                      className="bg-[#d9d9d9] rounded-[20px] shrink-0 w-[150px] h-[150px] shadow-sm transform hover:scale-105 transition-transform"
+                      className="bg-[#d9d9d9] rounded-[20px] shrink-0 w-[150px] h-[150px] shadow-sm transform hover:scale-105 transition-transform overflow-hidden"
                     >
-                      {/* Image Mockup */}
+                      <img
+                        src={img}
+                        alt="Work Experience"
+                        className="size-full object-cover"
+                      />
                     </div>
                   ))}
                 </div>
@@ -138,9 +162,13 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
                 {item.images.map((img) => (
                   <div
                     key={img}
-                    className="bg-[#d9d9d9] rounded-[20px] shrink-0 w-[120px] h-[120px] shadow-sm transform hover:scale-105 transition-transform"
+                    className="bg-[#d9d9d9] rounded-[20px] shrink-0 w-[120px] h-[120px] shadow-sm transform hover:scale-105 transition-transform overflow-hidden"
                   >
-                    {/* Image Mockup */}
+                    <img
+                      src={img}
+                      alt="Work Experience"
+                      className="size-full object-cover"
+                    />
                   </div>
                 ))}
               </div>
@@ -154,14 +182,14 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
 
 export default function WorkExperienceSection() {
   return (
-    <section className="flex flex-col items-center justify-center p-4 md:p-8 lg:p-[100px] w-full min-h-screen relative overflow-hidden">
+    <section className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10 h-fit">
       <div className="flex flex-col gap-14 items-center justify-center w-full max-w-7xl mx-auto relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-manjari text-4xl md:text-5xl lg:text-6xl text-center"
+          className="font-manjari text-4xl md:text-5xl lg:text-6xl text-center font-bold"
         >
           Work Experience
         </motion.h1>
