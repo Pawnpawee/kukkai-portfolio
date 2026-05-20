@@ -556,9 +556,93 @@ export const animationProjectsData = [
     year: "2025",
   },
 ];
-export const renderingProjectsData = [];
-export const productionProjectsData = [];
+export const renderingProjectsData = [
+  // Fantasy Theme
+  { id: "fantasy-1", title: "Fantasy 1", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/1.jpg", year: "2024" },
+  { id: "fantasy-2", title: "Fantasy 2", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/2.jpg", year: "2024" },
+  { id: "fantasy-3", title: "Fantasy 3", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/3.jpg", year: "2024" },
+  { id: "fantasy-4", title: "Fantasy 4", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/4.jpg", year: "2024" },
+  { id: "fantasy-5", title: "Fantasy 5", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/5.jpg", year: "2024" },
+  { id: "fantasy-6", title: "Fantasy 6", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/6.jpg", year: "2024" },
+  { id: "fantasy-7", title: "Fantasy 7", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/7.jpg", year: "2024" },
+  { id: "fantasy-8", title: "Fantasy 8", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/8.jpg", year: "2024" },
+  { id: "fantasy-9", title: "Fantasy 9", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/9.jpg", year: "2024" },
+  { id: "fantasy-10", title: "Fantasy 10", skills: ["3D Graphics", "Maya"], videoEmbedUrl: "/assets/3d/fantasy/10.jpg", year: "2024" },
 
+  // Cafe Theme
+  { id: "cafe-1", title: "Cafe SoulSad", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/01-SoulSad.jpg", year: "2024" },
+  { id: "cafe-2", title: "Cafe PortBoat", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/02-PortBoat.jpg", year: "2024" },
+  { id: "cafe-3", title: "Cafe Toilet", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/03-Toilet.jpg", year: "2024" },
+  { id: "cafe-4", title: "Cafe Floor 1", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/04-Floor1.jpg", year: "2024" },
+  { id: "cafe-5", title: "Cafe Floor 2", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/05-Floor2.jpg", year: "2024" },
+  { id: "cafe-6", title: "Cafe Counter Bar", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/06-CounterBar.jpg", year: "2024" },
+  { id: "cafe-7", title: "Cafe Icecream Table", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/07-IcecreamTable.jpg", year: "2024" },
+  { id: "cafe-8", title: "Cafe Floor 3", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/08-Floor3.jpg", year: "2024" },
+  { id: "cafe-9", title: "Cafe Bridge", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/09-Bridge.jpg", year: "2024" },
+  { id: "cafe-10", title: "Cafe Bakery", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/10-Bakery.jpg", year: "2024" },
+  { id: "cafe-11", title: "Cafe Counter Bakery", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/11-CounterBakery.jpg", year: "2024" },
+  { id: "cafe-12", title: "Cafe Outdoor", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/12-Outdoor.jpg", year: "2024" },
+  { id: "cafe-13", title: "Cafe Sunset", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/13-Sunset.jpg", year: "2024" },
+  { id: "cafe-14", title: "Cafe Underwater", skills: ["3D Graphics", "Interior"], videoEmbedUrl: "/assets/3d/cafe/14-Under water.jpg", year: "2024" },
+
+  // Circus Theme
+  { id: "circus-1", title: "Circus Endstage 1", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/Endstage1.jpg", year: "2023" },
+  { id: "circus-2", title: "Circus Endstage 2", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/Endstage2.jpg", year: "2023" },
+  { id: "circus-3", title: "Circus Endstage 3", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/Endstage3.jpg", year: "2023" },
+  { id: "circus-4", title: "Circus Magic Hour 1", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/MagicHour1.jpg", year: "2023" },
+  { id: "circus-5", title: "Circus Magic Hour 2", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/MagicHour2.jpg", year: "2023" },
+  { id: "circus-6", title: "Circus Magic Hour 3", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/MagicHour3.jpg", year: "2023" },
+  { id: "circus-7", title: "Circus On Stage 1", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/OnStage1.jpg", year: "2023" },
+  { id: "circus-8", title: "Circus On Stage 2", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/OnStage2.jpg", year: "2023" },
+  { id: "circus-9", title: "Circus On Stage 3", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/circus/OnStage3.jpg", year: "2023" },
+
+  // Marvel Theme
+  { id: "marvel-1", title: "Marvel Darkhole", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/Darkhole.jpg", year: "2023" },
+  { id: "marvel-2", title: "Marvel Demon", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/Demon.jpg", year: "2023" },
+  { id: "marvel-3", title: "Marvel Gate", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/Gate.jpg", year: "2023" },
+  { id: "marvel-4", title: "Marvel Overall", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/Overall.jpg", year: "2023" },
+  { id: "marvel-5", title: "Marvel Room", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/Room.jpg", year: "2023" },
+  { id: "marvel-6", title: "Marvel Scene 1", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/scene1.jpg", year: "2023" },
+  { id: "marvel-7", title: "Marvel Scene 2", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/scene2.jpg", year: "2023" },
+  { id: "marvel-8", title: "Marvel Scene 3", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/scene3.jpg", year: "2023" },
+  { id: "marvel-9", title: "Marvel Scene 4", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/scene4.jpg", year: "2023" },
+  { id: "marvel-10", title: "Marvel Scene 5", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/scene5.jpg", year: "2023" },
+  { id: "marvel-11", title: "Marvel Scene Main", skills: ["3D Graphics", "Environment"], videoEmbedUrl: "/assets/3d/marvel/scene-main.jpg", year: "2023" },
+];
+export const productionProjectsData = [
+  {
+    id: "raek-yaem",
+    title: "Raek Yaem Pracha Uthit 45",
+    description: "A love story between college friends.",
+    skills: ["Storytelling", "Write Script", "Video Production"],
+    videoEmbedUrl: "https://www.youtube.com/embed/58_YWeVt_mo?si=MbBBQE146CzYXn-4",
+    year: "2024",
+  },
+  {
+    id: "wake-up",
+    title: "pls, Wake up and go to school",
+    description: "Introduction of 5 people that going to do something secret.",
+    skills: ["Storytelling", "Write Script", "Video Production"],
+    videoEmbedUrl: "https://www.youtube.com/embed/zJxUNYz47kw?si=r5k3vfa49lObOB7r",
+    year: "2024",
+  },
+  {
+    id: "homeless",
+    title: "UNTIL BECOME HOMELESS",
+    description: "A documentary about homeless people in the heart of the city.",
+    skills: ["Storytelling", "Write Script", "Documentary"],
+    videoEmbedUrl: "https://www.youtube.com/embed/RxlchrFuRYY?si=fCOnDVQpPINN0eT-",
+    year: "2024",
+  },
+  {
+    id: "id-rather-sleep",
+    title: "I'd Rather Sleep - Kero Kero Bonito (Unofficial MV)",
+    description: "An unofficial music video that tells the story of a woman who works so hard she becomes paranoid.",
+    skills: ["Storytelling", "Write Script", "Music Video"],
+    videoEmbedUrl: "https://www.youtube.com/embed/w3hZc6ua3x8?si=HTNWQZBJh8OGLbdH",
+    year: "2024",
+  },
+];
 export const categoriesData = [
   {
     id: "coding",
@@ -584,7 +668,7 @@ export const categoriesData = [
   {
     id: "3d",
     title: "3D\nRendering",
-    count: renderingProjectsData.length,
+    count: new Set(renderingProjectsData.map(p => p.id.split('-')[0])).size,
     iconType: "3d",
     href: "/projects/3d",
   },
