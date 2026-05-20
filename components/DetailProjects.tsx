@@ -18,15 +18,33 @@ export interface ProjectData {
   media?: React.ReactNode;
 }
 
-export default function DetailProjects({ project }: { project: ProjectData }) {
+export default function DetailProjects({
+  project,
+  layout = "row",
+  mediaClass,
+  detailClass,
+}: {
+  project: ProjectData;
+  layout?: "row" | "column";
+  mediaClass?: string;
+  detailClass?: string;
+}) {
   // Helper to determine if the URL is for YouTube
   const isYouTubeUrl = (url: string) => {
     return url.includes("youtube.com") || url.includes("youtu.be");
   };
 
+  // Helper to determine if the URL is for Figma
+  const isFigmaUrl = (url: string) => {
+    return url.includes("figma.com/embed") || url.includes("embed.figma.com");
+  };
+
   // Helper to normalize image paths (e.g., public\assets\sql.png -> /assets/sql.png)
   const normalizeImagePath = (path: string) => {
-    return path.replace(/\\/g, "/").replace(/^public\//, "/").replace(/^\/?assets\//, "/assets/");
+    return path
+      .replace(/\\/g, "/")
+      .replace(/^public\//, "/")
+      .replace(/^\/?assets\//, "/assets/");
   };
 
   // Normalize website link
@@ -52,13 +70,19 @@ export default function DetailProjects({ project }: { project: ProjectData }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
-      className="bg-white/50 backdrop-blur-[10px] flex flex-col lg:flex-row gap-8 lg:gap-[56px] items-center p-6 lg:p-[32px] rounded-[20px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-full"
+      className={`bg-white/50 backdrop-blur-[10px] flex flex-col ${
+        layout === "row" ? "lg:flex-row" : "lg:flex-col"
+      } gap-8 lg:gap-[56px] items-center p-6 lg:p-[32px] rounded-[20px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-full`}
     >
       {/* Media Box */}
-      <div className="flex-[1_0_0] w-full aspect-video h-auto">
+      <div
+        className={`${
+          layout === "row" ? (mediaClass || "flex-[1_0_0]") : "w-full"
+        } aspect-video h-auto`}
+      >
         <div className="bg-[#d9d9d9] w-full h-full rounded-[20px] overflow-hidden shadow-sm relative">
           {project.videoEmbedUrl ? (
-            isYouTubeUrl(project.videoEmbedUrl) ? (
+            isYouTubeUrl(project.videoEmbedUrl) || isFigmaUrl(project.videoEmbedUrl) ? (
               <iframe
                 src={project.videoEmbedUrl}
                 title={project.title}
@@ -84,7 +108,11 @@ export default function DetailProjects({ project }: { project: ProjectData }) {
       </div>
 
       {/* Detail Box (CardDetail) */}
-      <div className="flex-[1_0_0] flex flex-col gap-6 items-start w-full">
+      <div
+        className={`${
+          layout === "row" ? (detailClass || "flex-[1_0_0]") : "w-full"
+        } flex flex-col gap-6 items-start w-full`}
+      >
         <h4 className="font-bitcount font-bold text-[#f875aa] text-3xl">
           {project.title}
         </h4>

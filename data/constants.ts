@@ -357,6 +357,15 @@ export const codingProjectsData = [
     year: "2023",
   },
   {
+    id: "diagram",
+    title: "Use Case Diagram for Online Movie Ticket Booking System",
+    description:
+      "Use case diagram for an online movie ticket booking and sales system via application.",
+    skills: ["Use Case Diagram"],
+    videoEmbedUrl: "/assets/sql.png",
+    year: "2024",
+  },
+  {
     id: "killing-dragon",
     title: "Killing Dragon",
     description:
@@ -372,7 +381,99 @@ export const codingProjectsData = [
 ];
 
 // --- Projects Section Data ---
-export const designProjectsData = [];
+export const designProjectsData = [
+  {
+    id: "xiaofumeow-design",
+    title: "XiaoFuMeow Web Application PROTOTYPE",
+    description:
+      "a responsive food e-commerce website prototype for XiaoFuMeow, designed with Figma.",
+    skills: [],
+    videoEmbedUrl:
+      "https://embed.figma.com/design/3QpBu4nnjLjzwZWHzkDIAk/Final_WebCMM349?node-id=0-1&embed-host=share",
+    year: "2024",
+  },
+
+  {
+    id: "mux-gamification",
+    title: "PROTOTYPE MU(x) Gamification",
+    description:
+      "Engineered a strategic solution to enhance student engagement for Mahidol University’s online learning platform (MUx) via gamification, reaching the Final 11 teams nationwide.",
+    skills: [],
+    videoEmbedUrl:
+      "https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FdR3qcrXMQl5ha5e95VdxUr%2F%25E0%25B9%2580%25E0%25B8%25A3%25E0%25B8%25B5%25E0%25B8%25A2%25E0%25B8%2599%25E0%25B8%2581%25E0%25B8%25B1%25E0%25B8%2599%25E0%25B8%2595%25E0%25B9%2588%25E0%25B8%25AD%3Ftype%3Ddesign%26node-id%3D152-174%26t%3D2OboEdxkMpoKQX0K-1%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D152%253A174%26mode%3Ddesign",
+    year: "2024",
+  },
+  {
+    id: "port-mobile-app",
+    title: "PORTFOLIO APPLICATION PROTOTYPE",
+    description:
+      "a responsive portfolio application prototype, designed with Figma.",
+    skills: [],
+    videoEmbedUrl:
+      "https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FcdjK5qxohIeTLw7Kbr9tRu%2FPortfolio%3Ftype%3Ddesign%26node-id%3D67-134%26t%3DjhkDDtsV9oyweQlc-1%26scaling%3Dscale-down%26page-id%3D0%253A1%26mode%3Ddesign",
+    year: "2024",
+  },
+  {
+    id: "seed-prototype",
+    title: "SE-ED WEBSITE PROTOTYPE",
+    description:
+      "a responsive e-commerce website prototype for SE-ED, designed with Figma.",
+    skills: [],
+    videoEmbedUrl:
+      "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2F5ftLKlHvSUm788CijgTY8p%2FSE-ED-Prototype%3Ftype%3Ddesign%26node-id%3D1-16158%26t%3DaWtz5exxaLriDI9I-1%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D1%253A16158%26mode%3Ddesign",
+    year: "2024",
+  },
+  {
+    id: "ekkamai-tour-application",
+    title: "EKKAMAI TOUR APPLICATION",
+    description:
+      "a responsive travel application prototype for EKKAMAI TOUR, designed with Figma.",
+    skills: [],
+    videoEmbedUrl:
+      "https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FZMoE0a67LdiLHdywy6TZdd%2FEkamai%3Fnode-id%3D41-120%26scaling%3Dscale-down%26mode%3Ddesign%26t%3DgTTyWwGTdLKWhDAA-1",
+    year: "2024",
+  },
+  {
+    id: "res-q-app-design",
+    title: "Res-Q Mobile Application",
+    description:
+      "a responsive mobile application about SDG principles, designed with Figma.",
+    skills: [],
+    videoEmbedUrl:
+      "https://embed.figma.com/design/EHX1WRB4uZAbRPhPn4k2Z6/323?node-id=0-1&embed-host=share",
+    year: "2025",
+  },
+  {
+    id: "ikigai-design",
+    title: "Ikigai Website",
+    description:
+      "a responsive website for the Ikigai project, designed with Figma.",
+    skills: [],
+    videoEmbedUrl:
+      "https://embed.figma.com/design/vbwVAkvvTgrPIM6GpOM0t0/Thesis-Ikigai-Website?node-id=0-1&embed-host=share",
+    year: "2026",
+  },
+  {
+    id: "port-web-design-2026",
+    title: "Portfolio Website 2026",
+    description:
+      "a responsive website for the Portfolio 2026 project, designed with Figma.",
+    skills: [],
+    videoEmbedUrl:
+      "https://embed.figma.com/design/Ogl3QaSe7zf6AMg7LDah19/Portfolio?node-id=0-1&embed-host=share",
+    year: "2026",
+  },
+  {
+    id: "cartoon-club-design",
+    title: "Cartoon Club Website",
+    description:
+      "a responsive website for the Cartoon Club project, designed with Figma.",
+    skills: [],
+    videoEmbedUrl:
+      "https://embed.figma.com/design/OcvnmDKqWXtSDrsQiUAz0h/420-Final?node-id=0-1&embed-host=share",
+    year: "2026",
+  },
+];
 export const animationProjectsData = [];
 export const renderingProjectsData = [];
 export const productionProjectsData = [];
