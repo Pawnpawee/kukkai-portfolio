@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website — GitHub Copilot Setup
 
-## Getting Started
+## File Structure
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+.github/
+├── copilot-instructions.md          ← Global rules for ALL Copilot interactions
+└── prompts/
+    ├── figma-component.prompt.md    ← How to build any component from Figma
+    ├── page-builder.prompt.md       ← How to build a full page from Figma
+    └── navbar.prompt.md             ← Navbar-specific instructions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How to Use
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### In GitHub Copilot Chat (VS Code)
 
-## Learn More
+1. **Global instructions** in `copilot-instructions.md` are automatically applied to every chat.
 
-To learn more about Next.js, take a look at the following resources:
+2. **Use a specific skill** by referencing it in your prompt:
+   ```
+   #figma-component.prompt.md Build the CTAButton component
+   ```
+   ```
+   #navbar.prompt.md Build the Navbar component
+   ```
+   ```
+   #page-builder.prompt.md Build the Home page
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Make sure Figma MCP is connected** in your VS Code MCP settings before starting.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Workflow Summary
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+Connect Figma MCP
+      ↓
+Open GitHub Copilot Chat
+      ↓
+Reference the relevant .prompt.md file
+      ↓
+Copilot fetches Figma → extracts tokens → asks if unclear → writes code
+      ↓
+Review output against Figma design
+      ↓
+Repeat for next component/page
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Pages to Build
+
+| Priority | Page | Route | Status |
+|---|---|---|---|
+| 1 | Home | `/` | ⬜ Not started |
+| 2 | Projects | `/projects` | ⬜ Not started |
+| 3 | Work Experience | `/work-experience` | ⬜ Not started |
+| 4 | Activities | `/activities` | ⬜ Not started |
+| 5 | Skills | `/skills` | ⬜ Not started |
+
+## Reusable Components to Build First
+
+| Component | Figma Layer | Status |
+|---|---|---|
+| Header | `Header` | ⬜ Not started |
+| Navbar | `Navbar` | ⬜ Not started |
+| CTAButton | `CTA btn` | ⬜ Not started |
+| CTAArrowButton | `CTA with arrow btn` | ⬜ Not started |
+| Badge | `Badge` | ⬜ Not started |
+
+---
+
+## Questions Still Needed from User
+
+- [ ] **Figma node IDs** — ต้องถามทุกครั้งก่อน build แต่ละ component (จะได้ตอน build จริง)
+- [ ] **Mobile Navbar pattern** — hamburger + drawer (เลื่อนออกจากข้าง) หรือ hamburger + dropdown (กางลงมา)?
+
+## Confirmed Settings
+
+- ✅ Figma access: via **node ID**
+- ✅ Navbar: **sticky** (`position: sticky, top: 0`)
+- ✅ Navbar: has **logo/brand name** linking back to `/`
+- ✅ GitHub URL: `https://github.com/Pawnpawee`
+- ✅ Responsive: **mobile-first**, no mobile Figma frame — Copilot designs mobile layout and confirms with user
+- ✅ Additional pages: will be added later
