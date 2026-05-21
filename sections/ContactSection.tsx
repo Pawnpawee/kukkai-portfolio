@@ -65,14 +65,14 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10 h-screen justify-center"
+      className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10 h-fit justify-center"
     >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-center font-manjari text-4xl font-bold text-black lg:text-5xl"
+        className="text-center  text-4xl font-bold text-black lg:text-5xl"
       >
         Contact Me!
       </motion.h2>

@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, PanInfo } from "framer-motion";
+import { aboutMeData, commonUI } from "@/data/constants";
 
 interface AboutMeSectionProps {
   photos?: string[];
@@ -10,14 +11,7 @@ interface AboutMeSectionProps {
 export default function AboutMeSection({ photos }: AboutMeSectionProps) {
   const dragRef = useRef<HTMLDivElement | null>(null);
   const initialStack =
-    photos && photos.length > 0
-      ? photos.slice(0, 4)
-      : [
-          "/assets/1.jpg",
-          "/assets/2.jpg",
-          "/assets/3.jpg",
-          "/assets/4.jpg",
-        ];
+    photos && photos.length > 0 ? photos.slice(0, 4) : aboutMeData.photos;
 
   const [index, setIndex] = useState(0); // top card index
   const [swipeState, setSwipeState] = useState<{
@@ -46,6 +40,8 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
     }
   };
 
+  const { details } = aboutMeData;
+
   return (
     <section
       id="about"
@@ -56,18 +52,25 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="w-full text-start font-manjari text-4xl font-bold text-black lg:text-5xl"
+        className="w-full text-start  text-4xl font-bold text-black lg:text-5xl"
       >
-        Know Me Better
+        {commonUI.knowMeBetterTitle}
       </motion.h2>
 
-      <div className="flex flex-col xl:flex-row items-center xl:items-start gap-10 xl:gap-20 w-full h-full">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="flex flex-col xl:flex-row items-center xl:items-start gap-10 xl:gap-20 w-full h-full"
+      >
         {/* Photo stack column */}
         <div className="w-[300px] xl:w-1/3 h-[550px]">
           <div className="relative h-full">
             {initialStack.map((src, i) => {
               // Logic to determine stack position relative to active index
-              const depth = (i - index + initialStack.length) % initialStack.length;
+              const depth =
+                (i - index + initialStack.length) % initialStack.length;
 
               // Only render top 3 for performance, others are hidden
               if (depth > 2) return null;
@@ -115,6 +118,12 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
               );
             })}
 
+            {index >= initialStack.length && (
+              <div className="absolute inset-0 flex items-center justify-center rounded-[30px] bg-white/60">
+                <p className="text-lg">{commonUI.noMorePhotosLabel}</p>
+              </div>
+            )}
+
             {/* Swipe tip animation (blink twice, pause 2s) */}
             <motion.div
               initial={{ opacity: 1 }}
@@ -143,114 +152,83 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
                   <path d="M2 12h20" />
                 </svg>
               </div>
-              <span className="font-manjari text-lg text-black">
-                Swipe More!
+              <span className=" text-lg text-black">
+                {commonUI.swipeMoreLabel}
               </span>
             </motion.div>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row w-full h-full gap-8 lg:gap-12">
-          {/* Detail column (unchanged) */}
-          <div className="flex flex-col justify-between h-full gap-5">
+          {/* Detail column */}
+          <div className="flex flex-col justify-between h-full gap-5 flex-1">
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Full Name
-                </span>
+                <span className=" font-bold text-xl">Full Name</span>
               </div>
 
-              <h3 className="text-3xl font-manjari font-semibold ml-3 mt-3">
-                Pawnpawee Tanonchaiyaphat
+              <h3 className="text-3xl  font-semibold ml-3 mt-3">
+                {details.fullName}
               </h3>
             </div>
 
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Education
-                </span>
+                <span className=" font-bold text-xl">Education</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari ml-3">
-                <li>Petchra Pra Jom Klao Scholarship Student</li>
-                <li>Majoring in Applied Computer Science - Multimedia</li>
-                <li>King Mongkut&apos;s University of Technology Thonburi</li>
+              <ul className="mt-3 list-disc pl-6 text-lg  ml-3">
+                {details.education.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
               </ul>
             </div>
 
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">Hobbies</span>
+                <span className=" font-bold text-xl">Hobbies</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari ml-3">
-                <li>
-                  <strong>Tech Trends</strong>: Following the latest updates.
-                </li>
-                <li>
-                  <strong>Podcasts</strong>: Listening to English podcasts to
-                  level up my skills.
-                </li>
-                <li>
-                  <strong>Cat Parent</strong>: Chilling with my black cat, Kuro.
-                </li>
-                <li>
-                  <strong>Movies & Series</strong>: MCU and K-dramas.
-                </li>
+              <ul className="mt-3 list-disc pl-6 text-lg  ml-3">
+                {details.hobbies.map((hobby, idx) => (
+                  <li key={idx}>
+                    <strong>{hobby.label}</strong>: {hobby.description}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-          <div className="flex flex-col justify-between h-full gap-5">
+          <div className="flex flex-col justify-between h-full gap-5 flex-1">
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Personality Types
-                </span>
+                <span className=" font-bold text-xl">Personality Types</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari">
-                <li>MBTI - INTJ</li>
-                <li>DISC - Dominant</li>
+              <ul className="mt-3 list-disc pl-6 text-lg ">
+                {details.personalityTypes.map((type, idx) => (
+                  <li key={idx}>{type}</li>
+                ))}
               </ul>
             </div>
 
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Who am I?
-                </span>
+                <span className=" font-bold text-xl">Who am I?</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari">
-                <li>
-                  A versatile Full-Stack Developer and UI/UX Designer. <br />
-                  I build end-to-end web experiences with AI integration. <br />
-                  Highly adaptable and always ready to step out of <br />
-                  my comfort zone for global opportunities.
-                </li>
+              <ul className="mt-3 list-disc pl-6 text-lg ">
+                <li>{details.whoAmI}</li>
               </ul>
             </div>
 
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Career Goals
-                </span>
+                <span className=" font-bold text-xl">Career Goals</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari">
-                <li>
-                  Seeking global opportunities and international challenges.
-                </li>
-                <li>
-                  Passionate about integrating AI (like n8n) into practical web
-                  solutions.
-                </li>
-                <li>
-                  Aiming to bridge the gap between complex logic and seamless
-                  UI/UX.
-                </li>
+              <ul className="mt-3 list-disc pl-6 text-lg ">
+                {details.careerGoals.map((goal, idx) => (
+                  <li key={idx}>{goal}</li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
-

@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/outline";
-
-const logoImg = "/assets/logo.png";
+import { headerData } from "@/data/constants";
 
 interface HeaderProps {
   isNavOpen: boolean;
@@ -48,18 +47,18 @@ export default function Header({ isNavOpen, onToggleNav }: HeaderProps) {
           <Link
             href="/"
             className="flex items-center justify-center gap-4 place-self-center"
-            aria-label="Kukkai Portfolio"
+            aria-label={`${headerData.brandName.first} ${headerData.brandName.second}`}
           >
             <div className="h-10 w-11">
               <img
                 alt="Kukkai logo"
                 className="block h-full w-full object-cover"
-                src={logoImg}
+                src={headerData.logoImg}
               />
             </div>
             <div className="flex-col text-xl font-bold leading-none text-black lg:text-2xl hidden lg:flex">
-              <span>Kukkai</span>
-              <span>Portfolio</span>
+              <span>{headerData.brandName.first}</span>
+              <span>{headerData.brandName.second}</span>
             </div>
           </Link>
 
@@ -76,19 +75,19 @@ export default function Header({ isNavOpen, onToggleNav }: HeaderProps) {
                 }}
               >
                 <Link
-                  href="/chatbot"
+                  href={headerData.askBot.href}
                   className="flex items-center justify-center gap-2.5 rounded-2xl border border-white bg-[rgba(174,222,252,0.5)] px-6 py-4 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)]"
                 >
                   <span className="relative h-7.5 w-7.5">
                     <ChatBubbleLeftRightIcon className="absolute inset-0 h-full w-full" />
                   </span>
                   <span className="text-lg font-bold text-black lg:text-xl hidden lg:inline">
-                    Ask Bot
+                    {headerData.askBot.label}
                   </span>
                 </Link>
               </motion.div>
               <span className="hidden text-sm font-bold text-black lg:block lg:text-base">
-                ask anything about me!
+                {headerData.askBot.subLabel}
               </span>
             </div>
           </div>

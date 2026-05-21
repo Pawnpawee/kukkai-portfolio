@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-teachers);
   --font-bitcount: var(--font-bitcount);
+  --font-google-sans: var(--font-google-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,4 +41,7 @@ body {
   animation: blink 1s step-end infinite;
 }
 
+.font-google-sans {
+  font-family: var(--font-google-sans);
+}
 

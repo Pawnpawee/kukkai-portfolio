@@ -9,7 +9,12 @@ interface BadgeBoxProps {
   className?: string;
 }
 
-export default function BadgeBox({ icon, text, href, className }: BadgeBoxProps) {
+export default function BadgeBox({
+  icon,
+  text,
+  href,
+  className,
+}: BadgeBoxProps) {
   return (
     <a
       href={href}
@@ -18,7 +23,10 @@ export default function BadgeBox({ icon, text, href, className }: BadgeBoxProps)
       className={`block w-full max-w-[400px] ${className}`}
     >
       <motion.div
-        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.9)" }}
+        whileHover={{
+          scale: 1.05,
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+        }}
         whileTap={{ scale: 0.95 }}
         className="flex items-center gap-4 rounded-[50px] bg-[rgba(255,246,246,0.5)] px-6 py-4 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] transition-all duration-300"
       >
@@ -27,7 +35,7 @@ export default function BadgeBox({ icon, text, href, className }: BadgeBoxProps)
             {icon}
           </div>
         </div>
-        <span className="font-manjari text-lg font-bold text-black lg:text-xl truncate">
+        <span className=" text-lg font-bold text-black lg:text-xl truncate">
           {text}
         </span>
       </motion.div>
