@@ -76,9 +76,9 @@ export default function DetailProjects({
     >
       {/* Media Box */}
       <div
-        className={`${
-          layout === "row" ? mediaClass || "flex-[1_0_0]" : "w-full"
-        } aspect-video h-auto`}
+        className={`w-full shrink-0 aspect-video ${
+          layout === "row" ? `${mediaClass || "lg:flex-[1_0_0]"} lg:w-auto` : ""
+        }`}
       >
         <div className="bg-[#d9d9d9] w-full h-full rounded-[20px] overflow-hidden shadow-sm relative">
           {project.videoEmbedUrl ? (
@@ -110,9 +110,9 @@ export default function DetailProjects({
 
       {/* Detail Box (CardDetail) */}
       <div
-        className={`${
-          layout === "row" ? detailClass || "flex-[1_0_0]" : "w-full"
-        } flex flex-col gap-6 items-start w-full`}
+        className={`w-full flex flex-col gap-6 items-start ${
+          layout === "row" ? `${detailClass || "lg:flex-[1_0_0]"} lg:w-auto` : ""
+        }`}
       >
         <h4 className="font-bitcount font-bold text-[#f875aa] text-3xl">
           {project.title}
