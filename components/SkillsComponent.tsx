@@ -14,7 +14,10 @@ interface SkillsComponentProps {
 
 // Figma: skills-component | node: 62:2404
 // Font mapping: Figma 24px → text-2xl → implemented: text-xl
-export default function SkillsComponent({ category, skills }: SkillsComponentProps) {
+export default function SkillsComponent({
+  category,
+  skills,
+}: SkillsComponentProps) {
   return (
     <div className="flex flex-col items-center gap-8 w-full">
       {/* Category Badge */}
@@ -25,9 +28,7 @@ export default function SkillsComponent({ category, skills }: SkillsComponentPro
         transition={{ duration: 0.5 }}
         className="bg-[#AEDEFC] px-6 py-4 rounded-full shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)]"
       >
-        <h2 className="font-manjari font-bold text-xl text-black">
-          {category}
-        </h2>
+        <h2 className=" font-bold text-xl text-black">{category}</h2>
       </motion.div>
 
       {/* Skills Box */}
@@ -48,7 +49,7 @@ export default function SkillsComponent({ category, skills }: SkillsComponentPro
             transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
             className="bg-white/50 backdrop-blur-sm p-8 rounded-[20px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center gap-8 min-w-[144px] h-fit"
           >
-            <p className="font-manjari font-bold text-lg text-black text-center">
+            <p className=" font-bold text-lg text-black text-center">
               {skill.name}
             </p>
             {/* Icon Placeholder - 80x80 in Figma */}

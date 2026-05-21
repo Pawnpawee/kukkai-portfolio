@@ -19,7 +19,7 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: isLeft ? -50 : 50 , rotate: 0 }}
+      initial={{ opacity: 0, x: isLeft ? -50 : 50, rotate: 0 }}
       whileInView={{ opacity: 1, x: 0, rotate: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       whileHover={{ rotate: isLeft ? -2 : 2, scale: 1.02 }}
@@ -34,7 +34,7 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
           isLeft ? "lg:self-end" : "lg:self-start"
         }`}
       >
-        <span className="font-manjari font-bold text-xl md:text-2xl text-black">
+        <span className=" font-bold text-xl md:text-2xl text-black">
           {item.year}
         </span>
       </div>
@@ -54,18 +54,14 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
                   key={i}
                   className="flex gap-3 bg-white/40 p-3 rounded-lg border border-white shadow-sm"
                 >
-                  <span className="font-manjari text-[#f875aa] text-lg font-bold">
-                    •
-                  </span>
-                  <p className="font-manjari text-base md:text-lg text-black leading-relaxed">
+                  <span className=" text-[#f875aa] text-lg font-bold">•</span>
+                  <p className=" text-base md:text-lg text-black leading-relaxed">
                     {desc}
                   </p>
                 </div>
               ))
             ) : (
-              <p className="font-manjari text-lg text-black">
-                {item.description}
-              </p>
+              <p className=" text-lg text-black">{item.description}</p>
             )}
           </div>
 
@@ -80,7 +76,7 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
                 key={skill}
                 className="bg-[#AEDEFC]/50 px-4 py-2 rounded-full shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)]"
               >
-                <span className="font-manjari text-sm text-black">{skill}</span>
+                <span className=" text-sm text-black">{skill}</span>
               </div>
             ))}
           </div>
@@ -189,7 +185,7 @@ export default function WorkExperienceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-manjari text-4xl md:text-5xl lg:text-6xl text-center font-bold"
+          className=" text-4xl md:text-5xl lg:text-6xl text-center font-bold"
         >
           Work Experience
         </motion.h1>

@@ -34,7 +34,7 @@ function TimelineItem({ item, index }: { item: Activity; index: number }) {
           isLeft ? "lg:self-end" : "lg:self-start"
         }`}
       >
-        <span className="font-manjari font-bold text-xl md:text-2xl text-black">
+        <span className=" font-bold text-xl md:text-2xl text-black">
           {item.year}
         </span>
       </div>
@@ -45,22 +45,23 @@ function TimelineItem({ item, index }: { item: Activity; index: number }) {
           <h3 className="font-bitcount font-bold text-[#f875aa] text-2xl md:text-3xl mb-4">
             {item.title}
           </h3>
-          
+
           {/* Description as separate boxes */}
           <div className="flex flex-col gap-3 mb-6">
             {Array.isArray(item.description) ? (
               item.description.map((desc, i) => (
-                <div key={i} className="flex gap-3 bg-white/40 p-3 rounded-lg border border-white shadow-sm">
-                  <span className="font-manjari text-[#f875aa] text-lg font-bold">•</span>
-                  <p className="font-manjari text-base md:text-lg text-black leading-relaxed">
+                <div
+                  key={i}
+                  className="flex gap-3 bg-white/40 p-3 rounded-lg border border-white shadow-sm"
+                >
+                  <span className=" text-[#f875aa] text-lg font-bold">•</span>
+                  <p className=" text-base md:text-lg text-black leading-relaxed">
                     {desc}
                   </p>
                 </div>
               ))
             ) : (
-              <p className="font-manjari text-lg text-black">
-                {item.description}
-              </p>
+              <p className=" text-lg text-black">{item.description}</p>
             )}
           </div>
 
@@ -75,7 +76,7 @@ function TimelineItem({ item, index }: { item: Activity; index: number }) {
                 key={skill}
                 className="bg-[#AEDEFC]/50 px-4 py-2 rounded-full shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)]"
               >
-                <span className="font-manjari text-sm text-black">{skill}</span>
+                <span className=" text-sm text-black">{skill}</span>
               </div>
             ))}
           </div>
@@ -184,7 +185,7 @@ export default function ActivitiesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-manjari text-4xl md:text-5xl lg:text-6xl text-center font-bold"
+          className=" text-4xl md:text-5xl lg:text-6xl text-center font-bold"
         >
           Activities
         </motion.h1>
@@ -218,9 +219,7 @@ export default function ActivitiesSection() {
               })
             ) : (
               <div className="col-span-full flex justify-center py-20">
-                <p className="font-manjari text-xl text-gray-500 italic">
-                  Coming Soon...
-                </p>
+                <p className=" text-xl text-gray-500 italic">Coming Soon...</p>
               </div>
             )}
           </div>

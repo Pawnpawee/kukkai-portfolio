@@ -29,7 +29,7 @@ export default function AnimationProjectsPage() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center font-manjari text-4xl font-bold text-black lg:text-5xl"
+              className="text-center  text-4xl font-bold text-black lg:text-5xl"
             >
               2D & 3D <br />
               Animation
@@ -42,7 +42,7 @@ export default function AnimationProjectsPage() {
                 <div key={year} className="flex flex-col gap-10 items-center">
                   {/* Year Label */}
                   <div className="bg-[#AEDEFC] border-2 border-white px-8 py-3 rounded-[50px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] self-start w-full">
-                    <h2 className="font-manjari font-bold text-2xl text-black text-center">
+                    <h2 className=" font-bold text-2xl text-black text-center">
                       {year}
                     </h2>
                   </div>
@@ -68,9 +68,7 @@ export default function AnimationProjectsPage() {
               ))
             ) : (
               <div className="flex justify-center w-full py-20">
-                <p className="font-manjari text-xl text-gray-500 italic">
-                  Coming Soon...
-                </p>
+                <p className=" text-xl text-gray-500 italic">Coming Soon...</p>
               </div>
             )}
           </div>

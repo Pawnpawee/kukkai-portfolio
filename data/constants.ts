@@ -1253,3 +1253,11 @@ export const commonUI = {
   workExperienceTitle: "Work Experience",
   contactTitle: "Have any question?",
 };
+
+export const chatbotSuggestedQuestions = [
+  "แนะนำตัว Kukkai ให้รู้จักหน่อย 👋",
+  "ถนัด Tech Stack อะไรบ้าง? 💻",
+  "มีประสบการณ์ทำงานที่ไหนมาบ้าง? 🏢",
+  "โปรเจกต์ Ikigai คืออะไร? ✨",
+  "ช่องทางการติดต่อ 📬",
+];

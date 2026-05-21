@@ -13,7 +13,7 @@ export default function SkillsPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-manjari text-4xl md:text-5xl lg:text-6xl text-center font-bold"
+          className=" text-4xl md:text-5xl lg:text-6xl text-center font-bold"
         >
           Skills
         </motion.h1>

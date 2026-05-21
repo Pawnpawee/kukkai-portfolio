@@ -100,7 +100,7 @@ export default function DetailProjects({
             )
           ) : (
             project.media || (
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-manjari">
+              <div className="absolute inset-0 flex items-center justify-center text-gray-400 ">
                 Video / Image Preview
               </div>
             )
@@ -117,7 +117,7 @@ export default function DetailProjects({
         <h4 className="font-bitcount font-bold text-[#f875aa] text-3xl">
           {project.title}
         </h4>
-        <p className="font-manjari text-base lg:text-lg text-black w-full">
+        <p className=" text-base lg:text-lg text-black w-full">
           {project.description}
         </p>
 
@@ -128,7 +128,7 @@ export default function DetailProjects({
               key={skill}
               className="bg-[#AEDEFC]/50 px-4 py-2.5 rounded-[50px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] shrink-0 flex items-center"
             >
-              <span className="font-manjari text-base leading-normal text-black whitespace-nowrap">
+              <span className=" text-base leading-normal text-black whitespace-nowrap">
                 {skill}
               </span>
             </div>
@@ -136,7 +136,7 @@ export default function DetailProjects({
         </div>
 
         {/* Links */}
-        <div className="flex flex-col gap-1 font-manjari text-[20px] leading-normal text-black w-full">
+        <div className="flex flex-col gap-1  text-[20px] leading-normal text-black w-full">
           {websiteLink && (
             <div className="flex gap-2">
               <span className="shrink-0">Link:</span>

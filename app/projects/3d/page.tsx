@@ -18,7 +18,7 @@ export default function RenderingProjectsPage() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center font-manjari text-4xl font-bold text-black lg:text-5xl"
+              className="text-center  text-4xl font-bold text-black lg:text-5xl"
             >
               3D <br />
               Rendering
@@ -51,7 +51,7 @@ export default function RenderingProjectsPage() {
                     {project.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="bg-[#AEDEFC] text-black text-[10px] px-2 py-1 rounded-full font-manjari font-bold"
+                        className="bg-[#AEDEFC] text-black text-[10px] px-2 py-1 rounded-full  font-bold"
                       >
                         {skill}
                       </span>

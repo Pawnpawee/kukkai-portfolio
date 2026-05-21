@@ -30,12 +30,11 @@ export default function CodingProjectsPage() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center font-manjari text-4xl font-bold text-black lg:text-5xl"
+              className="text-center  text-4xl font-bold text-black lg:text-5xl"
             >
               Coding & <br />
               Programming
             </motion.p>
-
           </div>
 
           <div className="flex flex-col w-full gap-20">
@@ -43,7 +42,7 @@ export default function CodingProjectsPage() {
               <div key={year} className="flex flex-col gap-10 items-center">
                 {/* Year Label */}
                 <div className="bg-[#AEDEFC] border-2 border-white px-8 py-3 rounded-[50px] shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] self-start w-full">
-                  <h2 className="font-manjari font-bold text-2xl text-black text-center">
+                  <h2 className=" font-bold text-2xl text-black text-center">
                     {year}
                   </h2>
                 </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bitcount_Prop_Double, Teachers } from "next/font/google";
+import { Bitcount_Prop_Double, Google_Sans, Teachers } from "next/font/google";
 import "./globals.css";
 import PageShell from "@/components/PageShell";
 
@@ -18,6 +18,11 @@ const bitcount = Bitcount_Prop_Double({
   fallback: ["sans-serif"],
 });
 
+const google_sans = Google_Sans({
+  variable: "--font-google-sans",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Kukkai Portfolio",
   description: "Personal portfolio website",
@@ -31,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${teachers.variable} ${bitcount.variable} antialiased`}
+      className={`${teachers.variable} ${bitcount.variable} ${google_sans.variable} antialiased`}
     >
       <body className="flex flex-col font-sans">
         <PageShell>{children}</PageShell>

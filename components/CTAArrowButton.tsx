@@ -22,7 +22,7 @@ export default function CTAArrowButton({
       href={href}
       className={className ? `${baseClassName} ${className}` : baseClassName}
     >
-      <span className="font-manjari font-bold text-xl leading-none text-black mt-1">
+      <span className=" font-bold text-xl leading-none text-black mt-1">
         {label}
       </span>
       <ArrowRightIcon className="size-6 text-black" />

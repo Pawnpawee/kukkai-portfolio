@@ -52,7 +52,7 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="w-full text-start font-manjari text-4xl font-bold text-black lg:text-5xl"
+        className="w-full text-start  text-4xl font-bold text-black lg:text-5xl"
       >
         {commonUI.knowMeBetterTitle}
       </motion.h2>
@@ -152,7 +152,7 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
                   <path d="M2 12h20" />
                 </svg>
               </div>
-              <span className="font-manjari text-lg text-black">
+              <span className=" text-lg text-black">
                 {commonUI.swipeMoreLabel}
               </span>
             </motion.div>
@@ -163,23 +163,19 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
           <div className="flex flex-col justify-between h-full gap-5 flex-1">
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Full Name
-                </span>
+                <span className=" font-bold text-xl">Full Name</span>
               </div>
 
-              <h3 className="text-3xl font-manjari font-semibold ml-3 mt-3">
+              <h3 className="text-3xl  font-semibold ml-3 mt-3">
                 {details.fullName}
               </h3>
             </div>
 
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Education
-                </span>
+                <span className=" font-bold text-xl">Education</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari ml-3">
+              <ul className="mt-3 list-disc pl-6 text-lg  ml-3">
                 {details.education.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
@@ -188,9 +184,9 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
 
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">Hobbies</span>
+                <span className=" font-bold text-xl">Hobbies</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari ml-3">
+              <ul className="mt-3 list-disc pl-6 text-lg  ml-3">
                 {details.hobbies.map((hobby, idx) => (
                   <li key={idx}>
                     <strong>{hobby.label}</strong>: {hobby.description}
@@ -202,11 +198,9 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
           <div className="flex flex-col justify-between h-full gap-5 flex-1">
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Personality Types
-                </span>
+                <span className=" font-bold text-xl">Personality Types</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari">
+              <ul className="mt-3 list-disc pl-6 text-lg ">
                 {details.personalityTypes.map((type, idx) => (
                   <li key={idx}>{type}</li>
                 ))}
@@ -215,22 +209,18 @@ export default function AboutMeSection({ photos }: AboutMeSectionProps) {
 
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Who am I?
-                </span>
+                <span className=" font-bold text-xl">Who am I?</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari">
+              <ul className="mt-3 list-disc pl-6 text-lg ">
                 <li>{details.whoAmI}</li>
               </ul>
             </div>
 
             <div>
               <div className="inline-flex items-center gap-3 rounded-full bg-[rgba(255,246,246,0.5)] px-6 py-3 shadow-[0px_2px_30px_0px_rgba(0,0,0,0.1)] w-max">
-                <span className="font-manjari font-bold text-xl">
-                  Career Goals
-                </span>
+                <span className=" font-bold text-xl">Career Goals</span>
               </div>
-              <ul className="mt-3 list-disc pl-6 text-lg font-manjari">
+              <ul className="mt-3 list-disc pl-6 text-lg ">
                 {details.careerGoals.map((goal, idx) => (
                   <li key={idx}>{goal}</li>
                 ))}

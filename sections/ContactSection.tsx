@@ -72,7 +72,7 @@ export default function ContactSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-center font-manjari text-4xl font-bold text-black lg:text-5xl"
+        className="text-center  text-4xl font-bold text-black lg:text-5xl"
       >
         Contact Me!
       </motion.h2>

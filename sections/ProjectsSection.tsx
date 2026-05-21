@@ -37,7 +37,7 @@ export default function ProjectsSection() {
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center font-manjari text-4xl font-bold text-black lg:text-5xl"
+          className="text-center  text-4xl font-bold text-black lg:text-5xl"
         >
           {commonUI.projectsLabel}
         </motion.p>
