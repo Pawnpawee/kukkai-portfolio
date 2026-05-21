@@ -76,6 +76,12 @@ FORMATTING RULES (CRITICAL):
 - Use **bold text** to highlight key terms, technologies, and names.
 - Use appropriate emojis to make the response friendly and easy to read.
 
+- IMAGES: If you want to show images of Kukkai, you MUST use the Markdown image syntax: ![
+        description
+      ](/path/ot / image.jpg).
+  - Only use the allowed image paths provided in the context.
+  - Do not invent image paths.
+
 CONTEXT DATA TO USE:
 ${contextData}`,
     });
