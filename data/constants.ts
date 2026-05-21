@@ -1016,50 +1016,222 @@ export const skillsData = [
   {
     category: "Frontend",
     skills: [
-      { name: "React", iconType: "react" },
-      { name: "Next.js", iconType: "nextjs" },
-      { name: "TypeScript", iconType: "typescript" },
-      { name: "Tailwind CSS", iconType: "tailwind" },
-      { name: "Angular", iconType: "angular" },
-      { name: "HTML5", iconType: "html" },
-      { name: "CSS3", iconType: "css" },
-      { name: "Bootstrap", iconType: "bootstrap" },
+      {
+        name: "Next.js",
+        iconUrl:
+          "https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2148%2FPNG%2F512%2Fnextjs_icon_132160.png&id=132160&pack_or_individual=pack",
+      },
+      {
+        name: "Angular",
+        iconUrl:
+          "https://icones.pro/wp-content/uploads/2022/07/icone-angulaire-rouge.png",
+      },
+      {
+        name: "React",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/3840px-React-icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+      },
+      {
+        name: "JavaScript",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      },
+      {
+        name: "TypeScript",
+        iconUrl: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+      },
+      {
+        name: "Tailwind CSS",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1280px-Tailwind_CSS_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+      },
+      {
+        name: "BootStrap",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/960px-Bootstrap_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+      },
+      {
+        name: "HTML",
+        iconUrl: "https://images.icon-icons.com/171/PNG/512/html5_23329.png",
+      },
+      {
+        name: "CSS",
+        iconUrl:
+          "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/css-icon.png",
+      },
+      {
+        name: "Framer Motion",
+        iconUrl:
+          "https://images.seeklogo.com/logo-png/58/2/framer-icon-logo-png_seeklogo-586477.png",
+      },
+      {
+        name: "Figma",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+      },
+      {
+        name: "Lottie JSON",
+        iconUrl:
+          "https://cdn.iconscout.com/icon/free/png-256/free-lottiefiles-logo-icon-svg-download-png-4674917.png",
+      },
     ],
   },
   {
     category: "Backend",
     skills: [
-      { name: "ASP.NET Core", iconType: "dotnet" },
-      { name: "Node.js", iconType: "nodejs" },
-      { name: "Laravel", iconType: "laravel" },
-      { name: "PHP", iconType: "php" },
-      { name: "Python", iconType: "python" },
-      { name: "C#", iconType: "csharp" },
-      { name: "Java", iconType: "java" },
+      {
+        name: "C#",
+        iconUrl:
+          "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/csharp.webp",
+      },
+      {
+        name: "ASP.NET Core)",
+        iconUrl:
+          "https://user-images.githubusercontent.com/42860908/106164530-120e5680-61b0-11eb-954c-969c7031ffd4.png",
+      },
+      {
+        name: "Java",
+        iconUrl: "https://cdn-icons-png.flaticon.com/512/5968/5968282.png",
+      },
+      {
+        name: "PHP",
+        iconUrl: "https://cdn-icons-png.flaticon.com/512/5968/5968332.png",
+      },
+      {
+        name: "Laravel",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/3840px-Laravel.svg.png",
+      },
+      {
+        name: "RESTful APIs",
+        iconUrl: "https://miro.medium.com/1*7kx2CABxc38topzfJ_vZsQ.jpeg",
+      },
+      {
+        name: "Python",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png",
+      },
+      {
+        name: "JWT/CORS Security",
+        iconUrl: "https://jwtguard.net/images/logo.png",
+      },
+      {
+        name: "Clean Architecture",
+        iconUrl:
+          "https://api.nuget.org/v3-flatcontainer/sam.cleanarchitecture.template/10.0.1/icon",
+      },
     ],
   },
   {
-    category: "Database & Tools",
+    category: "Database & Cloud",
     skills: [
-      { name: "PostgreSQL", iconType: "postgresql" },
-      { name: "MySQL", iconType: "mysql" },
-      { name: "SQL Server", iconType: "sqlserver" },
-      { name: "Git", iconType: "git" },
-      { name: "Docker", iconType: "docker" },
-      { name: "n8n", iconType: "n8n" },
+      {
+        name: "Microsoft SQL Server",
+        iconUrl:
+          "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg",
+      },
+      {
+        name: "MySQL",
+        iconUrl: "https://cdn-icons-png.flaticon.com/512/5968/5968313.png",
+      },
+      {
+        name: "Azure",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/960px-Microsoft_Azure_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+      },
+      {
+        name: "postgresql",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1280px-Postgresql_elephant.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+      },
+      {
+        name: "vercel",
+        iconUrl:
+          "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/5/vercel-6xfdjwqdd2dnfsr90c0pjq.png/vercel-ltjv9ugkhzcj1yk16y59an.png?_a=DATAiZAAZAA0",
+      },
+      {
+        name: "railway",
+        iconUrl: "https://railway.com/brand/logo-dark.svg",
+      },
     ],
   },
   {
-    category: "Design",
+    category: "DevOps & AI Automation",
     skills: [
-      { name: "Figma", iconType: "figma" },
-      { name: "Adobe Premiere Pro", iconType: "premiere" },
-      { name: "Adobe After Effects", iconType: "aftereffects" },
-      { name: "Adobe Illustrator", iconType: "illustrator" },
-      { name: "Adobe Photoshop", iconType: "photoshop" },
-      { name: "Maya", iconType: "maya" },
-      { name: "Blender", iconType: "blender" },
-      { name: "ZBrush", iconType: "zbrush" },
+      {
+        name: "Git flow",
+        iconUrl:
+          "https://media.licdn.com/dms/image/v2/C4D12AQG0e-T1e2E7XQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1584958634252?e=2147483647&v=beta&t=bs9nDHEPP1aJK3gG_h9sq0R8g6nkbdzpGnDg37tnDnw",
+      },
+      { name: "Fork git", iconUrl: "https://git-fork.com/images/logo.png" },
+      {
+        name: "Agile/Scrum",
+        iconUrl: "https://miro.medium.com/0*KpzqUReoWU_DEwb5.png",
+      },
+      {
+        name: "MCP Figma",
+        iconUrl:
+          "https://miro.medium.com/v2/resize:fit:1200/1*TOiXt8_tZ7UShX3r6kjxVQ.png",
+      },
+      {
+        name: "Docker",
+        iconUrl:
+          "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/docker-icon.png",
+      },
+      {
+        name: "n8n",
+        iconUrl:
+          "https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/dark/n8n-color.png",
+      },
+    ],
+  },
+  {
+    category: "Languages",
+    skills: [
+      {
+        name: "Thai (Native)",
+        iconUrl: "https://cdn-icons-png.flaticon.com/512/323/323281.png",
+      },
+      {
+        name: "English (Working Proficiency Plus - TOEIC: 870)",
+        iconUrl:
+          "https://www.cpttm.org.mo/wp-content/uploads/2026/05/toeic-logo-larger-green.png",
+      },
+    ],
+  },
+  {
+    category: "Creative & Game",
+    skills: [
+      {
+        name: "Unity (C#)",
+        iconUrl:
+          "https://images.icon-icons.com/2389/PNG/512/unity_logo_icon_144772.png",
+      },
+      {
+        name: "Maya 3D",
+        iconUrl:
+          "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/autodesk-maya-icon.png",
+      },
+      {
+        name: "After Effect",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Adobe_After_Effects_CC_2026_icon.svg/3840px-Adobe_After_Effects_CC_2026_icon.svg.png",
+      },
+      {
+        name: "Illustrator",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/1280px-Adobe_Illustrator_CC_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+      },
+      {
+        name: "Photoshop",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/3840px-Adobe_Photoshop_CC_icon.svg.png",
+      },
+      {
+        name: "Premier Pro",
+        iconUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/500px-Adobe_Premiere_Pro_CC_icon.svg.png",
+      },
     ],
   },
 ];

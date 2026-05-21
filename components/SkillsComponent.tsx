@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 interface SkillItem {
   name: string;
-  iconType: string; // We'll use this for placeholder/dynamic icons
+  iconUrl: string; // We'll use this for placeholder/dynamic icons
 }
 
 interface SkillsComponentProps {
@@ -52,11 +52,13 @@ export default function SkillsComponent({ category, skills }: SkillsComponentPro
               {skill.name}
             </p>
             {/* Icon Placeholder - 80x80 in Figma */}
-            <div className="w-20 h-20 bg-[#d9d9d9] rounded-[20px] flex items-center justify-center overflow-hidden">
-               {/* In a real scenario, we'd map iconType to an actual SVG or Image */}
-               <div className="text-black/20 font-bold text-xs uppercase text-center p-2">
-                 {skill.iconType}
-               </div>
+            <div className="w-20 h-20 rounded-[20px] flex items-center justify-center overflow-hidden">
+              <img
+                src={skill.iconUrl}
+                alt={skill.name}
+                className="w-15 h-15 object-contain mb-2"
+                loading="lazy"
+              />
             </div>
           </motion.div>
         ))}
