@@ -13,6 +13,9 @@ const bitcount = Bitcount_Prop_Double({
   variable: "--font-bitcount",
   subsets: ["latin"],
   weight: ["700"],
+  display: "swap",
+  adjustFontFallback: false,
+  fallback: ["sans-serif"],
 });
 
 export const metadata: Metadata = {

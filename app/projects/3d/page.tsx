@@ -41,20 +41,18 @@ export default function RenderingProjectsPage() {
                   alt={project.title}
                   className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                
+
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-center items-center p-6 text-center">
                   <h3 className="text-white font-bitcount text-2xl font-bold mb-2">
                     {project.title}
                   </h3>
-                  {project.description && (
-                    <p className="text-white/80 font-manjari text-sm mb-4">
-                      {project.description}
-                    </p>
-                  )}
                   <div className="flex flex-wrap gap-2 justify-center">
                     {project.skills.map((skill) => (
-                      <span key={skill} className="bg-[#AEDEFC] text-black text-[10px] px-2 py-1 rounded-full font-manjari font-bold">
+                      <span
+                        key={skill}
+                        className="bg-[#AEDEFC] text-black text-[10px] px-2 py-1 rounded-full font-manjari font-bold"
+                      >
                         {skill}
                       </span>
                     ))}
@@ -76,7 +74,7 @@ export default function RenderingProjectsPage() {
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 md:p-8"
             onClick={() => setSelectedImage(null)}
           >
-            <button 
+            <button
               className="absolute top-4 right-4 text-white hover:text-[#AEDEFC] transition-colors"
               onClick={() => setSelectedImage(null)}
             >

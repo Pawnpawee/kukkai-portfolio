@@ -197,6 +197,7 @@ export const workExperienceData = [
       "/assets/work_exp/gofive/1.jpg",
       "/assets/work_exp/gofive/2.jpg",
       "/assets/work_exp/gofive/3.jpg",
+      "/assets/work_exp/gofive/4.png",
     ],
   },
   {
@@ -212,6 +213,7 @@ export const workExperienceData = [
       "/assets/work_exp/merkle/2.JPG",
       "/assets/work_exp/merkle/3.jpg",
       "/assets/work_exp/merkle/4.jpg",
+      "/assets/work_exp/merkle/5.png",
     ],
   },
   {
@@ -1008,6 +1010,59 @@ export const contactData = [
 
 // --- Activities Section Data ---
 export const activitiesData = [];
+
+// --- Skills Section Data ---
+export const skillsData = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React", iconType: "react" },
+      { name: "Next.js", iconType: "nextjs" },
+      { name: "TypeScript", iconType: "typescript" },
+      { name: "Tailwind CSS", iconType: "tailwind" },
+      { name: "Angular", iconType: "angular" },
+      { name: "HTML5", iconType: "html" },
+      { name: "CSS3", iconType: "css" },
+      { name: "Bootstrap", iconType: "bootstrap" },
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "ASP.NET Core", iconType: "dotnet" },
+      { name: "Node.js", iconType: "nodejs" },
+      { name: "Laravel", iconType: "laravel" },
+      { name: "PHP", iconType: "php" },
+      { name: "Python", iconType: "python" },
+      { name: "C#", iconType: "csharp" },
+      { name: "Java", iconType: "java" },
+    ],
+  },
+  {
+    category: "Database & Tools",
+    skills: [
+      { name: "PostgreSQL", iconType: "postgresql" },
+      { name: "MySQL", iconType: "mysql" },
+      { name: "SQL Server", iconType: "sqlserver" },
+      { name: "Git", iconType: "git" },
+      { name: "Docker", iconType: "docker" },
+      { name: "n8n", iconType: "n8n" },
+    ],
+  },
+  {
+    category: "Design",
+    skills: [
+      { name: "Figma", iconType: "figma" },
+      { name: "Adobe Premiere Pro", iconType: "premiere" },
+      { name: "Adobe After Effects", iconType: "aftereffects" },
+      { name: "Adobe Illustrator", iconType: "illustrator" },
+      { name: "Adobe Photoshop", iconType: "photoshop" },
+      { name: "Maya", iconType: "maya" },
+      { name: "Blender", iconType: "blender" },
+      { name: "ZBrush", iconType: "zbrush" },
+    ],
+  },
+];
 
 // --- Chatbot Page Data ---
 export const chatbotData = {

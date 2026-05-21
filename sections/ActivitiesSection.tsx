@@ -3,26 +3,26 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import { workExperienceData } from "@/data/constants";
+import { activitiesData } from "@/data/constants";
 
-interface Experience {
+interface Activity {
   year: string;
   title: string;
   description: string[] | string;
   skills: string[];
-  images: string[]; // Updated to match data/constants.ts
+  images: string[];
 }
 
-function TimelineItem({ item, index }: { item: Experience; index: number }) {
+function TimelineItem({ item, index }: { item: Activity; index: number }) {
   const isLeft = index % 2 === 0;
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: isLeft ? -50 : 50 , rotate: 0 }}
-      whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+      initial={{ opacity: 0, x: isLeft ? -50 : 50, rotate: isLeft ? -5 : 5 }}
+      whileInView={{ opacity: 1, x: 0, rotate: isLeft ? -2 : 2 }}
       viewport={{ once: true, margin: "-100px" }}
-      whileHover={{ rotate: isLeft ? -2 : 2, scale: 1.02 }}
+      whileHover={{ rotate: 0, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className={`flex flex-col gap-6 w-full ${
         isLeft ? "lg:items-end lg:text-right" : "lg:items-start lg:text-left"
@@ -45,18 +45,13 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
           <h3 className="font-bitcount font-bold text-[#f875aa] text-2xl md:text-3xl mb-4">
             {item.title}
           </h3>
-
+          
           {/* Description as separate boxes */}
           <div className="flex flex-col gap-3 mb-6">
             {Array.isArray(item.description) ? (
               item.description.map((desc, i) => (
-                <div
-                  key={i}
-                  className="flex gap-3 bg-white/40 p-3 rounded-lg border border-white shadow-sm"
-                >
-                  <span className="font-manjari text-[#f875aa] text-lg font-bold">
-                    •
-                  </span>
+                <div key={i} className="flex gap-3 bg-white/40 p-3 rounded-lg border border-white shadow-sm">
+                  <span className="font-manjari text-[#f875aa] text-lg font-bold">•</span>
                   <p className="font-manjari text-base md:text-lg text-black leading-relaxed">
                     {desc}
                   </p>
@@ -119,7 +114,7 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
           {isExpanded && (
             <motion.div
               initial={{ width: 0, opacity: 0 }}
-              animate={{ width: 596, opacity: 1 }} // 564px gallery + 32px gap = 596px
+              animate={{ width: 596, opacity: 1 }}
               exit={{ width: 0, opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className={`hidden lg:block absolute bottom-16 ${
@@ -137,7 +132,7 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
                     >
                       <img
                         src={img}
-                        alt="Work Experience"
+                        alt="Activity"
                         className="size-full object-cover"
                       />
                     </div>
@@ -166,7 +161,7 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
                   >
                     <img
                       src={img}
-                      alt="Work Experience"
+                      alt="Activity"
                       className="size-full object-cover"
                     />
                   </div>
@@ -180,7 +175,7 @@ function TimelineItem({ item, index }: { item: Experience; index: number }) {
   );
 }
 
-export default function WorkExperienceSection() {
+export default function ActivitiesSection() {
   return (
     <section className="relative flex w-full lg:w-9/10 flex-col items-center px-4 py-16 md:px-8 lg:px-16 gap-10 h-fit">
       <div className="flex flex-col gap-14 items-center justify-center w-full max-w-7xl mx-auto relative z-10">
@@ -191,7 +186,7 @@ export default function WorkExperienceSection() {
           transition={{ duration: 0.5 }}
           className="font-manjari text-4xl md:text-5xl lg:text-6xl text-center font-bold"
         >
-          Work Experience
+          Activities
         </motion.h1>
 
         {/* Timeline Container */}
@@ -201,30 +196,33 @@ export default function WorkExperienceSection() {
 
           {/* Timeline Items Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-16 lg:gap-y-32 gap-x-[100px] w-full relative z-10">
-            {workExperienceData.map((item, index) => {
-              const isLeft = index % 2 === 0;
+            {activitiesData.length > 0 ? (
+              activitiesData.map((item, index) => {
+                const isLeft = index % 2 === 0;
 
-              return (
-                <div
-                  key={index}
-                  className="contents" // Use contents so TimelineItem dictates its own grid placement
-                >
-                  {isLeft ? (
-                    <>
-                      <TimelineItem item={item} index={index} />
-                      <div className="hidden lg:block" />{" "}
-                      {/* Empty slot for grid layout */}
-                    </>
-                  ) : (
-                    <>
-                      <div className="hidden lg:block lg:mt-32" />{" "}
-                      {/* Offset right column down */}
-                      <TimelineItem item={item} index={index} />
-                    </>
-                  )}
-                </div>
-              );
-            })}
+                return (
+                  <div key={index} className="contents">
+                    {isLeft ? (
+                      <>
+                        <TimelineItem item={item} index={index} />
+                        <div className="hidden lg:block" />
+                      </>
+                    ) : (
+                      <>
+                        <div className="hidden lg:block lg:mt-32" />
+                        <TimelineItem item={item} index={index} />
+                      </>
+                    )}
+                  </div>
+                );
+              })
+            ) : (
+              <div className="col-span-full flex justify-center py-20">
+                <p className="font-manjari text-xl text-gray-500 italic">
+                  Coming Soon...
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
