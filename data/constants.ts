@@ -1009,7 +1009,148 @@ export const contactData = [
 ];
 
 // --- Activities Section Data ---
-export const activitiesData = [];
+export const activitiesData = [
+  {
+    year: "2024",
+    title: "Silver Medal Thailand Teaching Academy Award 2024",
+    description:
+      "Engineered 'STARBOUND' using Unity and C# to simplify C++ programming and flowchart logic into an interactive, award-winning educational experience.",
+    images: [
+      "/assets/activities/STARBOUND/1.jpg",
+      "/assets/activities/STARBOUND/2.jpg",
+      "/assets/activities/STARBOUND/3.jpg",
+      "/assets/activities/STARBOUND/4.jpg",
+    ],
+  },
+  {
+    year: "2024",
+    title: "MU(x) Gamification Hackathon Finalist (Top 11)",
+    description:
+      "Engineered a strategic solution to enhance student engagement for Mahidol University's online learning platform (MUx) via gamification, reaching the Final 11 teams nationwide.",
+    images: [
+      "/assets/activities/MUX/1.png",
+      "/assets/activities/MUX/2.png",
+    ],
+  },
+  {
+    year: "2024",
+    title: "TA FIET Series Workshop 3D",
+    description:
+      "Served as a Teaching Assistant for the 3D Workshop, mentoring high school students in the practical application of Maya and VR software.",
+    images: [
+      "/assets/activities/TA/1.jpg",
+      "/assets/activities/TA/2.jpg",
+      "/assets/activities/TA/3.jpg",
+    ],
+  },
+  {
+    year: "2024",
+    title: "Yannix Career Camp #1",
+    description:
+      "Participated in an intensive career camp to gain industry insights and learn about the professional production workflows at Yannix.",
+    images: [
+      "/assets/activities/yannix/1.jpg",
+      "/assets/activities/yannix/2.jpg",
+      "/assets/activities/yannix/3.jpg",
+      "/assets/activities/yannix/4.jpg",
+    ],
+  },
+  {
+    year: "2023",
+    title: "Vice President | MULTICAMP #20",
+    description:
+      "Orchestrated large-scale project planning and led cross-functional teams to achieve systematic milestones. Managed live stage environments and audience engagement as the official host.",
+    images: [
+      "/assets/activities/multicamp/1.jpg",
+      "/assets/activities/multicamp/2.jpg",
+      "/assets/activities/multicamp/3.jpg",
+    ],
+  },
+  {
+    year: "2025",
+    title: "Cross-cultural Engineering Project 2025",
+    description:
+      "Demonstrated the ability to collaborate in multi-national environments by effectively communicating technical requirements and project goals with international peers.",
+    images: [
+      "/assets/activities/CEP/1.jpg",
+      "/assets/activities/CEP/2.jpg",
+      "/assets/activities/CEP/3.jpg",
+      "/assets/activities/CEP/4.jpg",
+      "/assets/activities/CEP/5.jpg",
+    ],
+  },
+  {
+    year: "2024",
+    title: "Creative Team Lead | MULTIFIRSTMEET",
+    description:
+      "Led a cross-functional team to design high-engagement event content and visual assets; demonstrated strong leadership by streamlining task delegation and delivering public presentations as an official host to enhance audience engagement.",
+    images: [
+      "/assets/activities/multi1st/1.jpg",
+      "/assets/activities/multi1st/2.jpg",
+      "/assets/activities/multi1st/3.jpg",
+      "/assets/activities/multi1st/4.jpg",
+    ],
+  },
+  {
+    year: "2024",
+    title: "TOY MUSEUM EXHIBITION",
+    description:
+      "Served as the Head of the Coding Team; managed the technical setup for VR experiences and communicated project details effectively with international faculty members.",
+    images: [
+      "/assets/activities/vr/1.jpg",
+      "/assets/activities/vr/2.jpg",
+      "/assets/activities/vr/3.jpg",
+      "/assets/activities/vr/4.jpg",
+    ],
+  },
+  {
+    year: "2026",
+    title: "FIET Training Project 2025",
+    description:
+      "Received the Honorable Mention Award for 'Promoting Sustainable Development Goals' for the 2026 academic year.",
+    images: [
+      "/assets/activities/fiet/1.jpg",
+      "/assets/activities/fiet/2.jpg",
+    ],
+  },
+  {
+    year: "2024-2026",
+    title: "KMUTT Student Honors Day",
+    description:
+      "Received the Academic Excellence Award for maintaining First-Class Honors standing throughout academic years 1 to 3.",
+    images: [
+      "/assets/activities/honors/1.jpg",
+      "/assets/activities/honors/2.jpg",
+      "/assets/activities/honors/3.jpg",
+      "/assets/activities/honors/4.jpg",
+      "/assets/activities/honors/5.jpg",
+      "/assets/activities/honors/6.png",
+    ],
+  },
+  {
+    year: "2026",
+    title: "IMKEN 2026",
+    description:
+      "Delivered a formal English pitching presentation for 'Ikigai: The Journey of Life' to a joint panel of professors from local and Japanese universities.",
+    images: [
+      "/assets/activities/imken/1.jpg",
+      "/assets/activities/imken/2.jpg",
+      "/assets/activities/imken/3.jpg",
+    ],
+  },
+  {
+    year: "2026",
+    title: "ClubHaus Multi Exhibition",
+    description:
+      "Served as the Creative Team Lead and Master of Ceremonies (MC) for a public exhibition hosted at the Bangkok Art and Culture Centre (BACC), earning the Rising Talent Award for the project.",
+    images: [
+      "/assets/activities/exhibition/1.jpg",
+      "/assets/activities/exhibition/2.jpg",
+      "/assets/activities/exhibition/3.jpg",
+      "/assets/activities/exhibition/4.jpg",
+    ],
+  },
+];
 
 // --- Skills Section Data ---
 export const skillsData = [
