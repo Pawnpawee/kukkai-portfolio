@@ -21,7 +21,7 @@ export default function PageShell({ children }: PageShellProps) {
 
   return (
     <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothWheel: true }}>
-      <div className="min-h-screen bg-[url('/bg.png')] bg-cover bg-top bg-no-repeat bg-fixed text-black">
+      <div className="min-h-screen bg-[url('/bg.png')] bg-cover bg-top bg-no-repeat bg-fixed text-black overflow-x-hidden">
         <div className="relative flex min-h-screen flex-col px-4 md:px-8 lg:px-12">
           <Header
             isNavOpen={isNavOpen}
